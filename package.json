@@ -1,0 +1,21 @@
+{
+  "name": "lokaverkefni",
+  "version": "1.0.0",
+  "description": "Lokaverkefni í Vfor2 og Gagn2",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hjörvar Ingi Haraldsson",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "better-sqlite3": "^9.4.3",
+    "colors": "^1.4.0",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.9",
+    "express": "^4.18.3",
+    "express-session": "^1.18.0",
+    "path": "^0.12.7"
+  }
+}
