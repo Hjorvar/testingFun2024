@@ -1,7 +1,11 @@
 <link rel="stylesheet" href="css/login.css">
 
-<form action="/login" method="post" id="loginForm">
-  <input type="text" name="username" id="username">
-  <input type="password" name="password" id="password">
-  <input type="submit" value="Submit">
-</form>
+<div id="loginForm">
+  Login:
+  <form action="/login" method="post" id="loginForm">
+    <input type="text" name="username" id="username">
+    <input type="password" name="password" id="password">
+    <input type="submit" value="Submit">
+    <button type="button" onclick="toggleForms()">Go to Register</button>
+  </form>
+</div>
