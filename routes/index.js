@@ -1,28 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcrypt');
-const path = require('path');
-const createUser = require('../db/create/users');
-
-const dbFile = path.join(__dirname, '../db/users.db');
-
 
 router.get('/', (req, res) => {
   const title = 'Register';
-  res.render('index', { title });
-});
+  const funnyText = 'ELLI, you are so funny, and please teach me how to play guitar';
 
-router.post('/', (req, res) => {
-  console.log(req.body);
-  const encryptedPassword = bcrypt.hashSync(req.body.password, 10);
-  console.log(encryptedPassword);
-  const decryptedPassword = bcrypt.compareSync(req.body.password, encryptedPassword);
-  console.log(decryptedPassword);
-
-  const username = req.body.username;
-  createUser(dbFile, username, encryptedPassword);
-
-  res.redirect('/');
+  let isLoggedIn = false;
+  if(req.session.user) {
+    isLoggedIn = true;
+  }
+  res.render('index', { title, isLoggedIn, funnyText });
 });
 
 module.exports = router;

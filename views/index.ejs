@@ -6,10 +6,18 @@
   <title><%= title %></title>
 </head>
 <body>
-  <form action="/" method="post">
-    <input type="text" name="username" id="username">
-    <input type="password" name="password" id="password">
-    <input type="submit" value="Submit">
-  </form>
+
+  <% if(isLoggedIn){ %>
+      <%= funnyText %>
+  
+  <% } else { %>
+    Register:
+    <br>
+    <%- include('include/registerForm') %>
+    <br>
+    Login:
+    <br>
+    <%- include('include/loginForm') %>
+  <% } %>
 </body>
 </html>
