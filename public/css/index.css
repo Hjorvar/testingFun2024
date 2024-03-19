@@ -1,0 +1,27 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevents scrolling */
+}
+
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.form { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+  gap: 10px;  
+  background-color: #2196F3;
+  padding: 10px;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}

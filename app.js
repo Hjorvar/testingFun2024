@@ -37,7 +37,6 @@ app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/forbidden', forbiddenRouter);
 
-
 // Handle 404 errors
 app.use((req, res) => {
   res.status(404);

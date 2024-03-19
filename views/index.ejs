@@ -4,16 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= title %></title>
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+  <div class="grid-container">
+    <div class="item1">Header</div>
+    <div class="item2">Menu</div>
+    <div class="form">
+        <% if(isLoggedIn){ %>
+            <%= funnyText %>
+        
+        <% } else { %>
+          <%- include('include/registerForm') %>
+          <%- include('include/loginForm') %>
+        <% } %>
+    </div>  
+    <div class="item4">Right</div>
+    <div class="item5">Footer</div>
+  </div>
 
-  <% if(isLoggedIn){ %>
-      <%= funnyText %>
-  
-  <% } else { %>
-    <%- include('include/registerForm') %>
-    <%- include('include/loginForm') %>
-  <% } %>
   <script src="js/loginRegister.js"></script>
 </body>
 </html>
