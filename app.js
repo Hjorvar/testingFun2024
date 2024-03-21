@@ -1,18 +1,23 @@
+// code library for the server
 const express = require('express');
 const path = require('path');
 const session = require('express-session');
 const dotenv = require('dotenv');
 require('colors');
 
+// Code library that we created
 const homeRouter = require('./routes/index');
 const registerRouter = require('./routes/register');
 const loginRouter = require('./routes/login');
 const forbiddenRouter = require('./routes/forbidden');
+const searchRouter = require('./routes/search');
 
 // Load environment variables from .env file
 dotenv.config();
 
+// run express method and store it in app, this is our server
 const app = express();
+// Set the port to the environment variable PORT that we keep in .env file
 const port = process.env.PORT;
 
 // Parse application/x-www-form-urlencoded
@@ -20,6 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Serve static files from public folder
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
 
 // Set view engine and views folder
 app.set('views', path.join(__dirname, 'views'));
@@ -32,10 +38,12 @@ app.use(session({
   saveUninitialized: true,
 }));
 
+// Checks what was requested and sends it to the right router
 app.use('/', homeRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/forbidden', forbiddenRouter);
+app.use('/search', searchRouter);
 
 // Handle 404 errors
 app.use((req, res) => {

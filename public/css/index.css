@@ -5,7 +5,7 @@ html, body {
   overflow: hidden; /* Prevents scrolling */
 }
 
-.item1 { grid-area: header; }
+.search { grid-area: header; }
 .item2 { grid-area: menu; }
 .form { grid-area: main; }
 .item4 { grid-area: right; }
@@ -24,4 +24,17 @@ html, body {
   height: 100vh;
   margin: 0;
   overflow: hidden;
+}
+
+
+.item2 {
+  background-color: rgb(192, 130, 16);
+}
+
+.item4 {
+  background-color: rgb(54, 112, 78);
+}
+
+.item5 {
+  background-color: rgb(129, 26, 39);
 }

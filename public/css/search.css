@@ -1,0 +1,5 @@
+.search {
+  background-color: green;
+  display: grid;
+  place-items: center;
+}

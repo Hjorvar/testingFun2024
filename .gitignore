@@ -1,2 +1,4 @@
+# Files to ignore from git
+
 /node_modules
 .env
