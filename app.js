@@ -10,7 +10,6 @@ const homeRouter = require('./routes/index');
 const registerRouter = require('./routes/register');
 const loginRouter = require('./routes/login');
 const forbiddenRouter = require('./routes/forbidden');
-const searchRouter = require('./routes/search');
 
 // Load environment variables from .env file
 dotenv.config();
@@ -43,7 +42,6 @@ app.use('/', homeRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/forbidden', forbiddenRouter);
-app.use('/search', searchRouter);
 
 // Handle 404 errors
 app.use((req, res) => {
