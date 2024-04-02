@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Card Game</title>
+    <style>
+        .card {
+            width: 90px;
+            height: 120px;
+            margin: 10px;
+            display: inline-block;
+            background: url('images/cards/red_joker.png') no-repeat center center;
+            background-size: cover;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="cards-container">
+        <% cards.forEach(function(card) { %>
+            <div class="card" data-card-name="<%= card.name %>"></div>
+        <% }); %>
+    </div>
+    <script>
+      var cardsArray = <%- JSON.stringify(cards) %>;
+    </script>
+    <script src="js/memory.js"></script>
+</body>
+</html>
