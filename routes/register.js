@@ -8,16 +8,13 @@ const dbFile = path.join(__dirname, '../db/users.db');
 
 
 router.get('/', (req, res) => {
-  res.redirect('/');
+  const title = 'Register page';
+  res.render('register', { title });
 });
 
 router.post('/', (req, res) => {
-  console.log(req.body);
+  // const decryptedPassword = bcrypt.compareSync(req.body.password, encryptedPassword); Used to decode for login
   const encryptedPassword = bcrypt.hashSync(req.body.password, 10);
-  console.log(encryptedPassword);
-  const decryptedPassword = bcrypt.compareSync(req.body.password, encryptedPassword);
-  console.log(decryptedPassword);
-
   const username = req.body.username;
   createUser(dbFile, username, encryptedPassword);
 
