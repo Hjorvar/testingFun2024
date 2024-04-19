@@ -12,6 +12,7 @@ const loginRouter = require('./routes/login');
 const forbiddenRouter = require('./routes/forbidden');
 const memoryRouter = require('./routes/memory');
 const logoutRouter = require('./routes/logout');
+const storyRouter = require('./routes/story')
 
 // Load environment variables from .env file
 dotenv.config();
@@ -46,6 +47,7 @@ app.use('/login', loginRouter);
 app.use('/forbidden', forbiddenRouter);
 app.use('/memory', memoryRouter);
 app.use('/logout', logoutRouter);
+app.use('/story', storyRouter);
 
 // Handle 404 errors
 app.use((req, res) => {

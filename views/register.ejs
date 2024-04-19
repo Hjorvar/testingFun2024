@@ -7,9 +7,19 @@
 </head>
 <body>
     <form action="/register" method="post">
-        <input type="text" name="username" id="username" placeholder="Username">
-        <input type="password" name="password" id="password" placeholder="Password">
-        <input type="submit" value="Create User">
+        <input type="text" id="username" name="username"
+            required
+            pattern="[a-zA-Z0-9]{5,12}"
+            title="Username should be 5-12 characters long and only contain letters and numbers."
+            placeholder="Create a username">
+ 
+        <input type="password" id="password" name="password"
+            required
+            minlength="8"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Password must be at least 8 characters long, including a number, a lowercase letter, and an uppercase letter."
+            placeholder="Create a password">
+            <input type="submit" value="Create User">
     </form>
 </body>
 </html>
